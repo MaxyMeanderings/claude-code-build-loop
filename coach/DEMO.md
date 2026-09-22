@@ -1,8 +1,8 @@
 # DEMO — BIT Atlanta 404, Sept 22, 4:30 PM
 
-> **Sept 21, late: the session is recorded, not live.** The deck now carries seven rendered frames of the actual run (slides 14, 15, 17, 19–22), text verbatim from `runs/`. This file is the optional live path and the fallback: the three slash commands still work in this folder, and the whole loop takes about six minutes if the room asks to see it for real. The frames were rendered from the saved transcripts by `demo/captures/render-frames.js` (run from `hackhers-2026/slides` with `NODE_PATH` pointed at its `node_modules`).
+> **Sept 21, late: the session is recorded, not live.** The deck now carries seven rendered frames of the actual run (slides 14, 15, 17, 19–22), text verbatim from `runs/`. This file is the optional live path and the fallback: the three slash commands still work in this folder, and the whole loop takes about six minutes if the room asks to see it for real. The frames were rendered from the saved transcripts by `demo/captures/render-frames.js` (run from `claude-code-build-loop/slides`).
 
-The live beats are slides 9 through 15 of `hackhers-2026/slides/bit-404.md`. Everything below is one paste or one slash command. Three slash commands live in `.claude/commands/` and are the workflow you script for yourself, which is the point of the talk.
+The live beats are slides 9 through 22 of `claude-code-build-loop/slides/slides.md`. Everything below is one paste or one slash command. Three slash commands live in `.claude/commands/` and are the workflow you script for yourself, which is the point of the talk.
 
 ## Before the room (4:00 PM)
 
@@ -10,7 +10,7 @@ Run `demo\start.cmd`. It opens VS Code on this folder with `COACH-PROMPT.md` at 
 
 | Tab | Folder | Running | Role |
 |---|---|---|---|
-| DECK | `hackhers-2026\slides` | `npm run dev:bit404` | slides on http://localhost:3132 |
+| DECK | `claude-code-build-loop\slides` | `npm run dev` | slides on http://localhost:3132 |
 | BUILDER | this folder | `claude` | spec, files, `/challenge`, `/repair` |
 | COACH | this folder | `claude` | `/coach`, the live test, `save AC-<id>` |
 
@@ -62,7 +62,7 @@ It reads the spec, the prompt, the case sheet, and the saved run, quotes the res
 - If the verdict is pass or unresolved: say so. The BR-02 repair from the recorded run is **already applied** to `COACH-PROMPT.md` (lines 104–109), so a live `/repair BR-02` will report nothing to fix. The recorded fail and its repair are on deck slides 17 and 19; point there instead of re-running them.
 - Never manufacture a failure. The recorded one is real and already on the slides.
 
-**Slides 16–20.** Deck only.
+**Slides 23–27.** Deck only.
 
 ## Fresh conversations
 
@@ -75,5 +75,4 @@ Fallbacks are plain text you paste into any Claude conversation, in order: `demo
 ## Do not
 
 - Do not say "proprietary." The repo is public and this folder is four files and a prompt.
-- Do not present the reference coach on `reference/completed-coach` as this build.
 - Do not improve a response before the room judges it.
