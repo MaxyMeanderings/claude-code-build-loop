@@ -29,6 +29,8 @@ rail:
 
 <div class="cover-mark"><img src="/assets/claude-logo.svg" alt="Claude" /></div><div class="hero-sub">Beyond chat: stand up systems and workflows for yourself.<br>One build in Claude Code, recorded end to end. One loop you take home.</div><div class="tagline">Claude Code · your process · your evidence</div>
 
+<img class="cover-szd" src="/assets/szd-logo.png" alt="SZD Labs" />
+
 <div class="source">BIT Atlanta · 404 Tech Summit · September 22, 2026</div>
 
 <!--
@@ -456,6 +458,8 @@ class: content access-slide
 # Stay connected.
 
 <div class="connect"><img class="speaker-photo" src="/assets/tyler.jpeg" alt="Tyler Sztuka" /><div><h3>Tyler Sztuka</h3><p>SZD Labs · Claude Community Ambassador</p><p><a href="https://www.linkedin.com/in/tyler-sztuka-283937123/" target="_blank" rel="noopener noreferrer">linkedin.com/in/tyler-sztuka-283937123 ↗</a></p><p><a href="https://szdlabs.io/" target="_blank" rel="noopener noreferrer">szdlabs.io ↗</a></p></div></div>
+
+<img class="connect-szd" src="/assets/szd-logo.png" alt="SZD Labs" />
 
 <div class="source">Thanks for judging with me. Everything shown is in the repo. Copy it.</div>
 
