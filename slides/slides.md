@@ -1,6 +1,6 @@
 ---
 theme: default
-title: Beyond Chat · Build with Claude Code
+title: Building Your Own Workflows Using Claude Code
 info: Beyond chat. How to stand up systems and workflows for yourself with Claude Code. One worked example, one loop you take home. BIT Atlanta 404 Tech Summit, Sept 22, 2026.
 colorSchema: dark
 aspectRatio: 16/9
@@ -17,17 +17,17 @@ mdc: true
 rail:
   - { label: 'Start', start: 1 }
   - { label: 'Mindset', start: 4 }
-  - { label: 'Brief → spec', start: 7 }
-  - { label: 'Build', start: 10 }
-  - { label: 'Test & repair', start: 13 }
-  - { label: 'Take it home', start: 24 }
+  - { label: 'Brief → spec', start: 8 }
+  - { label: 'Build', start: 11 }
+  - { label: 'Test & repair', start: 14 }
+  - { label: 'Take it home', start: 25 }
 ---
 
 <div class="slide-number">SZD Labs · Beyond chat</div>
 
-# Build a coach.<br>Own how it behaves.
+# Building Your Own Workflows<br>Using Claude Code.
 
-<div class="cover-mark"><img src="/assets/claude-logo.svg" alt="Claude" /></div><div class="hero-sub">Stop chatting with Claude and start standing up systems and workflows for yourself. One worked example, built in Claude Code from a one-page brief, tested by a separate reviewer, repaired once, with every step’s evidence left on disk.</div><div class="tagline">The example is a coach. The loop is what you take home.</div>
+<div class="cover-mark"><img src="/assets/claude-logo.svg" alt="Claude" /></div><div class="hero-sub">Stop chatting with Claude and start standing up systems and workflows for yourself. One worked example, built in Claude Code from a one-page brief, tested by a separate reviewer, repaired once, with every step’s evidence left on disk.</div>
 
 <img class="cover-szd" src="/assets/szd-logo.png" alt="SZD Labs" />
 
@@ -49,9 +49,7 @@ class: presenters-slide
 <div class="presenter"><img src="/assets/tyler.jpeg" alt="Tyler Sztuka" /><div><h3>Tyler Sztuka</h3><p class="role">Founder, SZD Labs · Claude Community Ambassador</p><p>SZD Labs is an applied AI implementation and upskilling firm focused on:</p><ul class="focus"><li>Non-technical domain expert upskilling</li><li>Anthropic platform implementation</li><li>AI-augmented SDLC</li><li>Enterprise AI token spend and performance optimization</li></ul></div></div>
 </div>
 
-<div class="takeaway">Bring judgment. Leave with a loop you can point at your own process tonight.</div>
-
-<div class="intro-linkedin"><a href="https://www.linkedin.com/in/tyler-sztuka-283937123/" target="_blank" rel="noopener noreferrer">linkedin.com/in/tyler-sztuka-283937123 ↗</a></div>
+<div class="intro-linkedin"><a href="https://www.linkedin.com/in/tyler-sztuka-283937123/" target="_blank" rel="noopener noreferrer">linkedin.com/in/tyler-sztuka-283937123 ↗</a><figure class="qr"><img src="/assets/bit-404/qr/qr-linkedin.svg" alt="QR code for https://www.linkedin.com/in/tyler-sztuka-283937123/" /></figure></div>
 
 <div class="source"><a href="https://szdlabs.io/">szdlabs.io</a> · <a href="https://github.com/MaxyMeanderings/claude-code-build-loop" target="_blank" rel="noopener noreferrer">github.com/MaxyMeanderings/claude-code-build-loop</a></div>
 
@@ -60,7 +58,7 @@ Name the ambassador bias out loud.
 -->
 
 ---
-class: content access-slide
+class: content access-slide qr-slide
 ---
 
 <div class="slide-number">SZD Labs · Beyond chat</div>
@@ -72,7 +70,7 @@ class: content access-slide
 <div class="source">Type either one now. The build and these slides live there. You will want them at 5:01.</div>
 
 ---
-class: content
+class: content copilot-slide
 ---
 
 <div class="slide-number">SZD Labs · Beyond chat</div>
@@ -85,6 +83,22 @@ class: content
 
 <!--
 One minute. Copilot is a metaphor, not a product. Useful automation can run on its own inside clear bounds; the team still owns the goal, the acceptance criteria, and the consequential decisions. The takeaway line is the whole talk. Everything after this is the loop that lets you answer it.
+-->
+
+---
+class: content what-slide
+---
+
+<div class="slide-number">SZD Labs · Beyond chat</div>
+
+# What we're building.
+
+<div class="four"><section><h3>The thing</h3><p>A coach: a conversational prompt, four output templates, and a set of adversarial test cases. No app. It lives in a folder and loads into Claude Code.</p></section><section><h3>Its purpose</h3><p>Turn an idea for a tool or automation into a small, defensible experiment before anything gets built. Discovery first, features last.</p></section><section><h3>Who it's for</h3><p>A professional domain expert: a marketer, an ops lead, an analyst, a recruiter. No coding background, and none required.</p></section><section><h3>The outcome</h3><p>Four documents: an Idea Brief, a Count Ledger, an Experiment Card, and a one-page Build Brief they hand to Claude Code next. Plus a decision: Proceed, Narrow, Investigate, or Pivot.</p></section></div><div class="takeaway">It never invents a source, never strengthens a claim, and never records an approval you did not give. Those rules are what we will test.</div>
+
+<div class="source">coach/BUILD-BRIEF.md · coach/templates/</div>
+
+<!--
+One minute. Name the thing before the loop: a coach that helps a domain expert decide whether something is worth building, and hands Claude Code a one-page brief if it is. Marketing operations is the running example because that is the room's archetype; the loop is the same for any process. Point at the three rules in the takeaway; they are the ones the challenger will test later.
 -->
 
 ---
@@ -120,14 +134,14 @@ Every step leaves a file or a response you can point at. That is the difference 
 -->
 
 ---
-class: content
+class: content brief-slide
 ---
 
 <div class="slide-number">SZD Labs · Beyond chat</div>
 
 # Start with a behavior brief.
 
-<div class="artifact"><label>BUILD-BRIEF.md · THE INPUT · RE-AIMED FOR THIS ROOM</label><p>Help a domain expert, a marketer, an ops lead, an analyst, turn an idea for a tool or automation into a small, defensible experiment before anything gets built. No coding background assumed.</p><ul><li>Ask who it helps, the last time the problem happened, how it's handled today, who they can reach this week.</li><li>Separate observations, reports, hypotheses, and Unknowns. Never strengthen a claim.</li><li>Compare alternatives (the spreadsheet, the vendor, doing nothing) from supplied sources only. Never invent research, benchmarks, or vendor claims.</li><li>Produce four outputs. The last one is a one-page Build Brief they hand to Claude Code next.</li><li>Three features max for the first build. They choose Proceed, Narrow, Investigate, or Pivot.</li></ul></div>
+<div class="artifact"><label>BUILD-BRIEF.md · THE INPUT</label><p>Help a domain expert, a marketer, an ops lead, an analyst, turn an idea for a tool or automation into a small, defensible experiment before anything gets built. No coding background assumed.</p><ul><li>Ask who it helps, the last time the problem happened, how it's handled today, who they can reach this week.</li><li>Separate observations, reports, hypotheses, and Unknowns. Never strengthen a claim.</li><li>Compare alternatives (the spreadsheet, the vendor, doing nothing) from supplied sources only. Never invent research, benchmarks, or vendor claims.</li><li>Produce four outputs. The last one is a one-page Build Brief they hand to Claude Code next.</li><li>Three features max for the first build. They choose Proceed, Narrow, Investigate, or Pivot.</li></ul></div>
 
 <div class="source">My BUILD-BRIEF.md, Sept 21 · coach/BUILD-BRIEF.md in the repo</div>
 
@@ -144,8 +158,6 @@ class: content
 # What a conversation looks like.
 
 <div class="conversation"><div class="student"><label>EXPERT · SYNTHETIC EXAMPLE</label><p>“I’m a marketer. I want to automate our weekly campaign report. What do other marketing teams pay for this? Give me benchmarks and a couple of links.”</p></div><div class="coach"><label>COACH · RECORDED RESPONSE EXCERPTS · MY BUILD · SEPT 21</label><p>“Pulling benchmarks, prices, or links is out of scope for this coach — I only work from sources you supply, so anything I don’t have from you stays [unknown].”</p><p>“‘I don’t know’ is a fine answer to any of these; I’ll record it as [unknown] and we move on.”</p></div></div>
-
-<div class="source">runs/AC-07-response.md · recorded headless, 2026-09-21, intervening text omitted · not the live run</div>
 
 <!--
 Read the coach aloud. Ask: what did it refuse to do? These are exact excerpts from my own build's recorded run last night, with intervening text omitted. Say "recorded, not live" out loud. The live run with the room's input is at slide 13.
@@ -318,7 +330,7 @@ This is the moment. The case tested no-invented-sources and the coach passed it.
 -->
 
 ---
-class: content
+class: content repair-slide
 ---
 
 <div class="slide-number">SZD Labs · Beyond chat</div>
@@ -434,14 +446,14 @@ This is the takeaway slide. Read the five lines slowly. Name two or three proces
 -->
 
 ---
-class: content
+class: content qr-slide
 ---
 
 <div class="slide-number">SZD Labs · Beyond chat</div>
 
 # Run the full loop tonight.
 
-<div class="two"><section><h3>Build your own</h3><p><a href="https://github.com/MaxyMeanderings/claude-code-build-loop" target="_blank">Clone the repo ↗</a></p><p><a href="https://github.com/MaxyMeanderings/claude-code-build-loop/blob/main/coach/BUILD-STEPS.md" target="_blank">Follow coach/BUILD-STEPS.md ↗</a></p><p><a href="https://github.com/MaxyMeanderings/claude-code-build-loop/blob/main/YOUR-BRIEF.md" target="_blank">Start from YOUR-BRIEF.md ↗</a></p><p>Save your spec, prompt, templates, test cases, and actual responses.</p></section><section><h3>Compare and continue</h3><p><a href="https://github.com/MaxyMeanderings/claude-code-build-loop/blob/main/coach/COACH-PROMPT.md" target="_blank">My coach prompt ↗</a></p><p><a href="https://github.com/MaxyMeanderings/claude-code-build-loop/tree/main/coach/runs" target="_blank">The recorded runs ↗</a></p><p><a href="https://maxymeanderings.github.io/claude-code-build-loop/" target="_blank">These slides ↗</a></p></section></div><div class="takeaway">Any Claude Code account works. Your brief, an empty folder, the same six steps.</div>
+<div class="two"><section><h3>Build your own</h3><p><a href="https://github.com/MaxyMeanderings/claude-code-build-loop" target="_blank">Clone the repo ↗</a></p><p><a href="https://github.com/MaxyMeanderings/claude-code-build-loop/blob/main/coach/BUILD-STEPS.md" target="_blank">Follow coach/BUILD-STEPS.md ↗</a></p><p><a href="https://github.com/MaxyMeanderings/claude-code-build-loop/blob/main/YOUR-BRIEF.md" target="_blank">Start from YOUR-BRIEF.md ↗</a></p><p>Save your spec, prompt, templates, test cases, and actual responses.</p><div class="qr-row"><figure class="qr"><img src="/assets/bit-404/qr/qr-repo.svg" alt="QR code for https://github.com/MaxyMeanderings/claude-code-build-loop" /><span>Clone the repo</span></figure><figure class="qr"><img src="/assets/bit-404/qr/qr-build-steps.svg" alt="QR code for https://github.com/MaxyMeanderings/claude-code-build-loop/blob/main/coach/BUILD-STEPS.md" /><span>BUILD-STEPS.md</span></figure><figure class="qr"><img src="/assets/bit-404/qr/qr-your-brief.svg" alt="QR code for https://github.com/MaxyMeanderings/claude-code-build-loop/blob/main/YOUR-BRIEF.md" /><span>YOUR-BRIEF.md</span></figure></div></section><section><h3>Compare and continue</h3><p><a href="https://github.com/MaxyMeanderings/claude-code-build-loop/blob/main/coach/COACH-PROMPT.md" target="_blank">My coach prompt ↗</a></p><p><a href="https://github.com/MaxyMeanderings/claude-code-build-loop/tree/main/coach/runs" target="_blank">The recorded runs ↗</a></p><p><a href="https://maxymeanderings.github.io/claude-code-build-loop/" target="_blank">These slides ↗</a></p><div class="qr-row"><figure class="qr"><img src="/assets/bit-404/qr/qr-coach-prompt.svg" alt="QR code for https://github.com/MaxyMeanderings/claude-code-build-loop/blob/main/coach/COACH-PROMPT.md" /><span>COACH-PROMPT.md</span></figure><figure class="qr"><img src="/assets/bit-404/qr/qr-runs.svg" alt="QR code for https://github.com/MaxyMeanderings/claude-code-build-loop/tree/main/coach/runs" /><span>Recorded runs</span></figure><figure class="qr"><img src="/assets/bit-404/qr/qr-slides.svg" alt="QR code for https://maxymeanderings.github.io/claude-code-build-loop/" /><span>These slides</span></figure></div></section></div><div class="takeaway">Any Claude Code account works. Your brief, an empty folder, the same six steps.</div>
 
 <div class="source">github.com/MaxyMeanderings/claude-code-build-loop</div>
 
@@ -450,7 +462,7 @@ No sponsored credits in this room; say so. A Pro subscription or an API key both
 -->
 
 ---
-class: content access-slide
+class: content access-slide qr-slide
 ---
 
 <div class="slide-number">SZD Labs · Beyond chat</div>
@@ -459,12 +471,14 @@ class: content access-slide
 
 <div class="connect"><img class="speaker-photo" src="/assets/tyler.jpeg" alt="Tyler Sztuka" /><div><h3>Tyler Sztuka</h3><p>SZD Labs · Claude Community Ambassador</p><p><a href="https://www.linkedin.com/in/tyler-sztuka-283937123/" target="_blank" rel="noopener noreferrer">linkedin.com/in/tyler-sztuka-283937123 ↗</a></p><p><a href="https://szdlabs.io/" target="_blank" rel="noopener noreferrer">szdlabs.io ↗</a></p></div></div>
 
+<div class="connect-qr"><figure class="qr"><img src="/assets/bit-404/qr/qr-linkedin.svg" alt="QR code for https://www.linkedin.com/in/tyler-sztuka-283937123/" /><span>LinkedIn</span></figure><figure class="qr"><img src="/assets/bit-404/qr/qr-szdlabs.svg" alt="QR code for https://szdlabs.io/" /><span>szdlabs.io</span></figure></div>
+
 <img class="connect-szd" src="/assets/szd-logo.png" alt="SZD Labs" />
 
 <div class="source">Thanks for judging with me. Everything shown is in the repo. Copy it.</div>
 
 ---
-class: content access-slide
+class: content access-slide qr-slide
 ---
 
 <div class="slide-number">SZD Labs · Beyond chat</div>
