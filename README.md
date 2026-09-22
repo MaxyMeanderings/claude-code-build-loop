@@ -5,6 +5,7 @@ A thirty-minute session for the BIT Atlanta 404 Tech Summit, September 22, 2026,
 The point: stop chatting with Claude and start standing up systems and workflows for yourself. One worked example, built in Claude Code from a one-page brief, tested by a separate reviewer, repaired once, with every step's evidence left on disk. The example is a coach. The loop is what you take home.
 
 - **Slides:** https://maxymeanderings.github.io/claude-code-build-loop/
+- **Slides as PDF:** https://maxymeanderings.github.io/claude-code-build-loop/slides.pdf (also attached to the [latest release](https://github.com/MaxyMeanderings/claude-code-build-loop/releases/latest))
 - **The build:** [`coach/`](coach/)
 - **Your turn:** [`YOUR-BRIEF.md`](YOUR-BRIEF.md)
 
