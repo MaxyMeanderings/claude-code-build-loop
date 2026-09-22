@@ -176,7 +176,7 @@ Number requirements, exclusions, and acceptance cases.
 Map requirements to planned files and acceptance evidence.
 Ask about consequential gaps. Wait for our approval.</pre></div><p class="checkpoint-help">This is the short form. The full Specify prompt, with the engineering bar it must assess (DRY, SOLID, ACID, Big O, convention over configuration), is in <a href="https://github.com/MaxyMeanderings/claude-code-build-loop/blob/main/coach/BUILD-STEPS.md" target="_blank">coach/BUILD-STEPS.md ↗</a>. Next slide.</p>
 
-<div class="takeaway">Room: pick one requirement in the spec. Name the input that would break it.</div>
+<div class="takeaway">Which requirement would you try to break? Hold that thought. We run the one most rooms pick: ask it for outside evidence.</div>
 
 <div class="source">coach/BUILD-STEPS.md § 2 · coach/SPEC.md</div>
 

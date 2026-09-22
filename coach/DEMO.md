@@ -27,7 +27,7 @@ Hotspot on. Do not rely on venue wifi.
 **Slide 9 · what a conversation looks like.** Deck only. Say "recorded last night, not live."
 
 **Slide 10 · ask for a spec before code.** VS Code, `SPEC.md`. Scroll section 4 (behavior requirements) and section 10 (the questions it asked before building). Say "drafted last night from this prompt."
-Then: **"Pick a requirement. Name the input that would break it."** Type the room's input into `demo\room-input.txt` so it is on screen and saved. That is the live test at slide 15.
+Ask which requirement they would try to break, hands only. There is no room input on Sept 22 (no time); the live test at slide 15 uses `demo\paste.txt`.
 
 **Slide 12 · approve.** Deck only. Read the approve prompt. Say the approval was given last night and the decisions are recorded in SPEC.md section 11.
 
@@ -41,13 +41,13 @@ Then: **"Pick a requirement. Name the input that would break it."** Type the roo
 /coach
 ```
 
-It reads the prompt and the four templates and says "Your move." Then paste the room's input from `demo\room-input.txt`, or one of the four in `demo\inputs.txt`. Read the whole response aloud. Ask the room: pass, fail, or unresolved, against the *Fails if* line on the slide. Then type:
+It reads the prompt and the four templates and says "Your move." Then paste TURN A from `demo\paste.txt` (warm start), answer its three questions with TURN B, then paste TURN C (the AC-07 input). Read the whole response aloud. Ask the room: pass, fail, or unresolved, against the *Fails if* line on the slide. Then type:
 
 ```
 save AC-07
 ```
 
-(or `save AC-ROOM` for the room's own input). It writes `runs/AC-07-input.txt` and `runs/AC-07-response.md` and prints the two paths. Claude Code asks permission for the write; approve it and say why that prompt exists.
+(the id matches the case sheet). It writes `runs/AC-07-input.txt` and `runs/AC-07-response.md` and prints the two paths. Claude Code asks permission for the write; approve it and say why that prompt exists.
 
 **Slide 16 · challenger.** BUILDER tab, a separate session. Type:
 
@@ -84,14 +84,14 @@ Same folder, same three commands plus two display helpers (`/show`, `/files`), r
 | 1-7 | | Deck only. Slide 5 says what is being built; slide 6 the thesis; slide 7 the six steps. | | |
 | 8 | 1 Brief | BUILDER. Thirty seconds on the brief. Ask: which line is hardest to test? | `/show BUILD-BRIEF.md` | Files pane, the brief |
 | 9 | 1 Brief | Deck. Say "recorded last night, not live." | | |
-| 10 | 2 Spec | BUILDER. Section 4 is the behavior requirements, section 10 the questions it asked before building. Room picks a requirement and names the input that breaks it; type it into `demo/room-input.txt`. | `/show SPEC.md:95` then `/show SPEC.md:597` | Files pane at each section |
+| 10 | 2 Spec | BUILDER. Section 4 is the behavior requirements, section 10 the questions it asked before building. Ask which requirement they would try to break, hands only; no room input. | `/show SPEC.md:95` then `/show SPEC.md:597` | Files pane at each section |
 | 11 | 2 Spec | Deck. Where the spec comes from: the brief, the Specify prompt with its engineering bar, the builder's eight questions. Name the five principles and how each landed. | | |
 | 12 | 3 Approve | Deck, then BUILDER for the recorded approval and accepted defaults. | `/show SPEC.md:649` | Files pane, section 11 |
 | 14 | 4 Implement | BUILDER. Point at `COACH-PROMPT.md`, `templates/` (four, last is the Build Brief), `tests/acceptance-cases.md`, `runs/`. | `/files` | the tree in a code block |
 | 14 | 4 Implement | BUILDER. BR-12. Read "even for something you believe to be true." If there is time, the case it maps to. | `/show COACH-PROMPT.md:151` then `/show tests/acceptance-cases.md:116` | Files pane at BR-12, then AC-07 |
 | 15 | 5 Test | COACH session, fresh. | `/coach` | "Your move." |
-| 15 | 5 Test | Paste the room's input or AC-07. Read the whole response aloud. Room votes pass / fail / unresolved against the *Fails if* line. | the input | the coach's answer |
-| 15 | 5 Test | Save the evidence. Approve the write prompt if it appears and say why it exists. | `save AC-07` (or `save AC-ROOM`) | two paths under `runs/` |
+| 15 | 5 Test | Paste `demo/paste.txt` TURN A (warm start), answer its three questions with TURN B, then TURN C (AC-07). Read the response aloud. Room votes pass / fail / unresolved against the *Fails if* line. | turns A, B, C from `demo/paste.txt` | the coach's answer |
+| 15 | 5 Test | Save the evidence. Approve the write prompt if it appears and say why it exists. | `save AC-07` | two paths under `runs/` |
 | 16-17 | 5 Test | Recorded frames of the same beat, if you stay on the recorded path. | | |
 | 18-19 | 5 Challenge | BUILDER session. Read the verdict aloud. If it disagrees with the room, stay there a minute. | `/challenge AC-07` | quotes per requirement, then a `Verdict AC-07:` line and the smallest repair |
 | 20 | 6 Repair | If fail: BUILDER. It changes one rule, shows before and after, stops. | `/repair BR-xx` plus the challenger's last two lines | before / after |
