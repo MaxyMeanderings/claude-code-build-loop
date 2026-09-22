@@ -27,7 +27,7 @@ rail:
 
 # Build a coach.<br>Own how it behaves.
 
-<div class="cover-mark"><img src="/assets/claude-logo.svg" alt="Claude" /></div><div class="hero-sub">Beyond chat: stand up systems and workflows for yourself.<br>One build in Claude Code, recorded end to end. One loop you take home.</div><div class="tagline">Claude Code · your process · your evidence</div>
+<div class="cover-mark"><img src="/assets/claude-logo.svg" alt="Claude" /></div><div class="hero-sub">Stop chatting with Claude and start standing up systems and workflows for yourself. One worked example, built in Claude Code from a one-page brief, tested by a separate reviewer, repaired once, with every step’s evidence left on disk.</div><div class="tagline">The example is a coach. The loop is what you take home.</div>
 
 <img class="cover-szd" src="/assets/szd-logo.png" alt="SZD Labs" />
 
