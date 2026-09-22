@@ -63,7 +63,7 @@ npm ci
 npm run dev
 ```
 
-The published deck is the `gh-pages` branch, which holds the output of `npm run build`. To republish after editing `slides/slides.md`: build, then push the contents of `slides/dist` (plus an empty `.nojekyll`) to `gh-pages`. The seven recorded-run frames in `slides/public/assets/bit-404/` were rendered from the saved transcripts in `coach/runs/` by `coach/demo/captures/render-frames.js`; the text on them is verbatim.
+The published deck is the `gh-pages` branch, which holds the output of `npm run build`. To republish after editing `slides/slides.md`: build, then push the contents of `slides/dist` (plus an empty `.nojekyll`) to `gh-pages`. A ready-made GitHub Actions workflow sits in `slides/ci/deploy-slides.workflow.yml`; move it to `.github/workflows/` and set the repository's Pages source to GitHub Actions to publish on every push instead. The seven recorded-run frames in `slides/public/assets/bit-404/` were rendered from the saved transcripts in `coach/runs/` by `coach/demo/captures/render-frames.js`; the text on them is verbatim.
 
 ## Honesty notes
 
