@@ -64,6 +64,42 @@ It reads the spec, the prompt, the case sheet, and the saved run, quotes the res
 
 **Slides 24–28.** Deck only.
 
+## Desktop app path (Sept 22)
+
+Same folder, same three commands plus two display helpers (`/show`, `/files`), run from the Claude desktop app (Code tab) instead of VS Code and the terminal tabs. This folder is not a git repo, so sessions share `runs/` directly; no worktrees.
+
+**Before the room (4:00 PM)**
+
+1. Deck in the browser at http://localhost:3132 (the `deck` launch config) or the published URL. `f` for fullscreen. Slide 1. Hotspot on.
+2. Desktop app: New session on `C:/Users/Tyler/Desktop/bit-404-coach`. Name it COACH. Permission mode: default (ask), never bypass.
+3. Second new session, same folder. Name it BUILDER. Put the two side by side.
+4. No VS Code, no terminal. Files are shown from BUILDER with `/show <file>[:line]`, which opens the app's Files pane beside the conversation, and the tree with `/files`. (`demo/start.cmd` still opens the terminal tabs as the fallback.)
+5. Rehearse in throwaway sessions: in one, `/coach`, expect the one line "Coach loaded from COACH-PROMPT.md and four templates. Your move." In BUILDER, `/show COACH-PROMPT.md:151` and confirm the Files pane opens at BR-12, then `/files`. Then open a fresh COACH session and leave it empty so the room sees the load happen.
+6. Collapse the sidebar, zoom the text, check it reads from the back.
+
+**On stage**
+
+| Slide | Step | You do | Type | Expect |
+|---|---|---|---|---|
+| 1-7 | | Deck only. Slide 5 says what is being built; slide 6 the thesis; slide 7 the six steps. | | |
+| 8 | 1 Brief | BUILDER. Thirty seconds on the brief. Ask: which line is hardest to test? | `/show BUILD-BRIEF.md` | Files pane, the brief |
+| 9 | 1 Brief | Deck. Say "recorded last night, not live." | | |
+| 10 | 2 Spec | BUILDER. Section 4 is the behavior requirements, section 10 the questions it asked before building. Room picks a requirement and names the input that breaks it; type it into `demo/room-input.txt`. | `/show SPEC.md:95` then `/show SPEC.md:597` | Files pane at each section |
+| 11 | 3 Approve | Deck, then BUILDER for the recorded approval and accepted defaults. | `/show SPEC.md:649` | Files pane, section 11 |
+| 12 | 4 Implement | BUILDER. Point at `COACH-PROMPT.md`, `templates/` (four, last is the Build Brief), `tests/acceptance-cases.md`, `runs/`. | `/files` | the tree in a code block |
+| 13 | 4 Implement | BUILDER. BR-12. Read "even for something you believe to be true." If there is time, the case it maps to. | `/show COACH-PROMPT.md:151` then `/show tests/acceptance-cases.md:116` | Files pane at BR-12, then AC-07 |
+| 14 | 5 Test | COACH session, fresh. | `/coach` | "Your move." |
+| 14 | 5 Test | Paste the room's input or AC-07. Read the whole response aloud. Room votes pass / fail / unresolved against the *Fails if* line. | the input | the coach's answer |
+| 14 | 5 Test | Save the evidence. Approve the write prompt if it appears and say why it exists. | `save AC-07` (or `save AC-ROOM`) | two paths under `runs/` |
+| 15-16 | 5 Test | Recorded frames of the same beat, if you stay on the recorded path. | | |
+| 17-18 | 5 Challenge | BUILDER session. Read the verdict aloud. If it disagrees with the room, stay there a minute. | `/challenge AC-07` | quotes per requirement, then a `Verdict AC-07:` line and the smallest repair |
+| 19 | 6 Repair | If fail: BUILDER. It changes one rule, shows before and after, stops. | `/repair BR-xx` plus the challenger's last two lines | before / after |
+| 19 | 6 Repair | Then COACH, new session, same input, save; then one passing case (AC-13 is quick); then BUILDER challenges again. | `/coach` ... `save AC-07` ... `/challenge AC-07` | repair holds or not |
+| 20-23 | 6 Repair | If pass or unresolved: say so. The BR-02 repair is already applied (lines 104-109), so a live `/repair BR-02` reports nothing to fix. Point at the recorded fail and repair here instead. | | |
+| 24-28 | | Deck only. | | |
+
+Fresh conversation = new session, not `/clear`. Never manufacture a failure; the recorded one is real and on the slides. Do not improve a response before the room judges it.
+
 ## Fresh conversations
 
 `/clear` in the COACH tab between independent cases. The challenger runs in BUILDER so the coach's context never leaks into the review.
