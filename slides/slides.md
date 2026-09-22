@@ -18,9 +18,9 @@ rail:
   - { label: 'Start', start: 1 }
   - { label: 'Mindset', start: 4 }
   - { label: 'Brief → spec', start: 8 }
-  - { label: 'Build', start: 11 }
-  - { label: 'Test & repair', start: 14 }
-  - { label: 'Take it home', start: 25 }
+  - { label: 'Build', start: 12 }
+  - { label: 'Test & repair', start: 15 }
+  - { label: 'Take it home', start: 26 }
 ---
 
 <div class="slide-number">SZD Labs · Beyond chat</div>
@@ -174,7 +174,7 @@ class: content spec-prompt
 <div class="terminal"><div class="terminal-label">Type in Claude Code · in the starter folder</div><pre>Read BUILD-BRIEF.md. Draft SPEC.md; do not implement yet.
 Number requirements, exclusions, and acceptance cases.
 Map requirements to planned files and acceptance evidence.
-Ask about consequential gaps. Wait for our approval.</pre></div><p class="checkpoint-help">The full Specify prompt, with the engineering requirements, is in <a href="https://github.com/MaxyMeanderings/claude-code-build-loop/blob/main/coach/BUILD-STEPS.md" target="_blank">coach/BUILD-STEPS.md ↗</a>.</p>
+Ask about consequential gaps. Wait for our approval.</pre></div><p class="checkpoint-help">This is the short form. The full Specify prompt, with the engineering bar it must assess (DRY, SOLID, ACID, Big O, convention over configuration), is in <a href="https://github.com/MaxyMeanderings/claude-code-build-loop/blob/main/coach/BUILD-STEPS.md" target="_blank">coach/BUILD-STEPS.md ↗</a>. Next slide.</p>
 
 <div class="takeaway">Room: pick one requirement in the spec. Name the input that would break it.</div>
 
@@ -182,6 +182,22 @@ Ask about consequential gaps. Wait for our approval.</pre></div><p class="checkp
 
 <!--
 Switch to the terminal. Open the SPEC.md from last night's run and scroll it. Say "drafted last night from this prompt; here is what it asked me before building." Take one requirement from the room and write down the breaking input they propose. That input is the live test at slide 13.
+-->
+
+---
+class: content spec-slide
+---
+
+<div class="slide-number">SZD Labs · Beyond chat</div>
+
+# Where the spec comes from.
+
+<div class="three"><section><h3>The brief · what it must do</h3><p>BUILD-BRIEF.md, one page. Every behavior rule, BR-01 to BR-25, and every exclusion, EX-01 to EX-08, traces back to a line in it.</p></section><section><h3>The Specify prompt · what good looks like</h3><p>coach/BUILD-STEPS.md § 2. Numbered, observable requirements. Acceptance cases with a <em>fails if</em> line. Traceability to files. And an engineering bar, one principle at a time, below.</p></section><section><h3>Its questions · what you decide</h3><p>Eight open questions with proposed defaults before a line was written: packaging, where it runs, the experiment gate, persistence. Answered in SPEC.md § 10. Reopening one is a spec change.</p></section></div><div class="bar"><div><b>DRY</b><span>applies · one authoritative home per rule</span></div><div><b>SOLID</b><span>per principle · SRP yes, Liskov N/A, no types</span></div><div><b>ACID</b><span>N/A · no database, a prompt cannot promise it</span></div><div><b>Big O</b><span>partial · bounded context and output, no class for reasoning</span></div><div><b>Convention over configuration</b><span>applies · fixed file names and headings</span></div></div><div class="takeaway">The brief is yours. So is the bar: swap DRY and SOLID for brand rules, compliance, accessibility. The builder asks about the rest.</div>
+
+<div class="source">coach/BUILD-BRIEF.md · coach/BUILD-STEPS.md § 2 (prompts/01-specify.txt) · coach/SPEC.md § 6 and § 10</div>
+
+<!--
+This is the slide that answers "where did all of that come from." Three inputs, not one. Name the five principles out loud and how each landed: two apply, SOLID is assessed per principle, ACID is N/A because there is no database and a prompt cannot promise a transaction, Big O is partial. The point for this room: the engineering bar is the operator's standing quality bar, carried over from the student version of this workshop. Theirs can be brand rules, compliance, or accessibility. Same mechanism: the brief says what, the prompt says what good means, and the builder asks about the rest.
 -->
 
 ---

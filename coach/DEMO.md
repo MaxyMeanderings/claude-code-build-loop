@@ -1,8 +1,8 @@
 # DEMO — BIT Atlanta 404, Sept 22, 4:30 PM
 
-> **Sept 21, late: the session is recorded, not live.** The deck now carries seven rendered frames of the actual run (slides 15, 16, 18, 20–23), text verbatim from `runs/`. This file is the optional live path and the fallback: the three slash commands still work in this folder, and the whole loop takes about six minutes if the room asks to see it for real. The frames were rendered from the saved transcripts by `demo/captures/render-frames.js` (run from `claude-code-build-loop/slides`).
+> **Sept 21, late: the session is recorded, not live.** The deck now carries seven rendered frames of the actual run (slides 16, 17, 19, 21–24), text verbatim from `runs/`. This file is the optional live path and the fallback: the three slash commands still work in this folder, and the whole loop takes about six minutes if the room asks to see it for real. The frames were rendered from the saved transcripts by `demo/captures/render-frames.js` (run from `claude-code-build-loop/slides`).
 
-The live beats are slides 10 through 23 of `claude-code-build-loop/slides/slides.md`. Everything below is one paste or one slash command. Three slash commands live in `.claude/commands/` and are the workflow you script for yourself, which is the point of the talk.
+The live beats are slides 10 through 24 of `claude-code-build-loop/slides/slides.md`. Everything below is one paste or one slash command. Three slash commands live in `.claude/commands/` and are the workflow you script for yourself, which is the point of the talk.
 
 ## Before the room (4:00 PM)
 
@@ -27,15 +27,15 @@ Hotspot on. Do not rely on venue wifi.
 **Slide 9 · what a conversation looks like.** Deck only. Say "recorded last night, not live."
 
 **Slide 10 · ask for a spec before code.** VS Code, `SPEC.md`. Scroll section 4 (behavior requirements) and section 10 (the questions it asked before building). Say "drafted last night from this prompt."
-Then: **"Pick a requirement. Name the input that would break it."** Type the room's input into `demo\room-input.txt` so it is on screen and saved. That is the live test at slide 14.
+Then: **"Pick a requirement. Name the input that would break it."** Type the room's input into `demo\room-input.txt` so it is on screen and saved. That is the live test at slide 15.
 
-**Slide 11 · approve.** Deck only. Read the approve prompt. Say the approval was given last night and the decisions are recorded in SPEC.md section 11.
+**Slide 12 · approve.** Deck only. Read the approve prompt. Say the approval was given last night and the decisions are recorded in SPEC.md section 11.
 
-**Slide 12 · files.** Terminal BUILDER tab, or VS Code explorer. Show the tree: `COACH-PROMPT.md`, `templates/` (four files, the last is the Build Brief), `tests/acceptance-cases.md`, `runs/`.
+**Slide 13 · files.** Terminal BUILDER tab, or VS Code explorer. Show the tree: `COACH-PROMPT.md`, `templates/` (four files, the last is the Build Brief), `tests/acceptance-cases.md`, `runs/`.
 
-**Slide 13 · the rule.** VS Code, `COACH-PROMPT.md` line 151, BR-12. Read "even for something you believe to be true" aloud. Point at AC-07 in `tests/acceptance-cases.md` if there is time.
+**Slide 14 · the rule.** VS Code, `COACH-PROMPT.md` line 151, BR-12. Read "even for something you believe to be true" aloud. Point at AC-07 in `tests/acceptance-cases.md` if there is time.
 
-**Slide 14 · live test.** COACH tab. It is a fresh session. Type:
+**Slide 15 · live test.** COACH tab. It is a fresh session. Type:
 
 ```
 /coach
@@ -49,7 +49,7 @@ save AC-07
 
 (or `save AC-ROOM` for the room's own input). It writes `runs/AC-07-input.txt` and `runs/AC-07-response.md` and prints the two paths. Claude Code asks permission for the write; approve it and say why that prompt exists.
 
-**Slide 15 · challenger.** BUILDER tab, a separate session. Type:
+**Slide 16 · challenger.** BUILDER tab, a separate session. Type:
 
 ```
 /challenge AC-07
@@ -57,12 +57,12 @@ save AC-07
 
 It reads the spec, the prompt, the case sheet, and the saved run, quotes the response text per requirement, and ends with a verdict line. Read the verdict. If it disagrees with the room, stay there for a minute.
 
-**Slide 16 · repair, or a harder case.**
+**Slide 17 · repair, or a harder case.**
 - If the verdict is fail: in BUILDER, `/repair <BR id> <paste the challenger's last two lines>`. It changes one rule and shows before and after. Then in COACH: `/clear`, `/coach`, rerun the same input, `save AC-07`. Then rerun one passing case (AC-13 is quick) the same way.
-- If the verdict is pass or unresolved: say so. The BR-02 repair from the recorded run is **already applied** to `COACH-PROMPT.md` (lines 104–109), so a live `/repair BR-02` will report nothing to fix. The recorded fail and its repair are on deck slides 18 and 20; point there instead of re-running them.
+- If the verdict is pass or unresolved: say so. The BR-02 repair from the recorded run is **already applied** to `COACH-PROMPT.md` (lines 104–109), so a live `/repair BR-02` will report nothing to fix. The recorded fail and its repair are on deck slides 19 and 21; point there instead of re-running them.
 - Never manufacture a failure. The recorded one is real and already on the slides.
 
-**Slides 24–28.** Deck only.
+**Slides 25–29.** Deck only.
 
 ## Desktop app path (Sept 22)
 
@@ -85,18 +85,19 @@ Same folder, same three commands plus two display helpers (`/show`, `/files`), r
 | 8 | 1 Brief | BUILDER. Thirty seconds on the brief. Ask: which line is hardest to test? | `/show BUILD-BRIEF.md` | Files pane, the brief |
 | 9 | 1 Brief | Deck. Say "recorded last night, not live." | | |
 | 10 | 2 Spec | BUILDER. Section 4 is the behavior requirements, section 10 the questions it asked before building. Room picks a requirement and names the input that breaks it; type it into `demo/room-input.txt`. | `/show SPEC.md:95` then `/show SPEC.md:597` | Files pane at each section |
-| 11 | 3 Approve | Deck, then BUILDER for the recorded approval and accepted defaults. | `/show SPEC.md:649` | Files pane, section 11 |
-| 12 | 4 Implement | BUILDER. Point at `COACH-PROMPT.md`, `templates/` (four, last is the Build Brief), `tests/acceptance-cases.md`, `runs/`. | `/files` | the tree in a code block |
-| 13 | 4 Implement | BUILDER. BR-12. Read "even for something you believe to be true." If there is time, the case it maps to. | `/show COACH-PROMPT.md:151` then `/show tests/acceptance-cases.md:116` | Files pane at BR-12, then AC-07 |
-| 14 | 5 Test | COACH session, fresh. | `/coach` | "Your move." |
-| 14 | 5 Test | Paste the room's input or AC-07. Read the whole response aloud. Room votes pass / fail / unresolved against the *Fails if* line. | the input | the coach's answer |
-| 14 | 5 Test | Save the evidence. Approve the write prompt if it appears and say why it exists. | `save AC-07` (or `save AC-ROOM`) | two paths under `runs/` |
-| 15-16 | 5 Test | Recorded frames of the same beat, if you stay on the recorded path. | | |
-| 17-18 | 5 Challenge | BUILDER session. Read the verdict aloud. If it disagrees with the room, stay there a minute. | `/challenge AC-07` | quotes per requirement, then a `Verdict AC-07:` line and the smallest repair |
-| 19 | 6 Repair | If fail: BUILDER. It changes one rule, shows before and after, stops. | `/repair BR-xx` plus the challenger's last two lines | before / after |
-| 19 | 6 Repair | Then COACH, new session, same input, save; then one passing case (AC-13 is quick); then BUILDER challenges again. | `/coach` ... `save AC-07` ... `/challenge AC-07` | repair holds or not |
-| 20-23 | 6 Repair | If pass or unresolved: say so. The BR-02 repair is already applied (lines 104-109), so a live `/repair BR-02` reports nothing to fix. Point at the recorded fail and repair here instead. | | |
-| 24-28 | | Deck only. | | |
+| 11 | 2 Spec | Deck. Where the spec comes from: the brief, the Specify prompt with its engineering bar, the builder's eight questions. Name the five principles and how each landed. | | |
+| 12 | 3 Approve | Deck, then BUILDER for the recorded approval and accepted defaults. | `/show SPEC.md:649` | Files pane, section 11 |
+| 14 | 4 Implement | BUILDER. Point at `COACH-PROMPT.md`, `templates/` (four, last is the Build Brief), `tests/acceptance-cases.md`, `runs/`. | `/files` | the tree in a code block |
+| 14 | 4 Implement | BUILDER. BR-12. Read "even for something you believe to be true." If there is time, the case it maps to. | `/show COACH-PROMPT.md:151` then `/show tests/acceptance-cases.md:116` | Files pane at BR-12, then AC-07 |
+| 15 | 5 Test | COACH session, fresh. | `/coach` | "Your move." |
+| 15 | 5 Test | Paste the room's input or AC-07. Read the whole response aloud. Room votes pass / fail / unresolved against the *Fails if* line. | the input | the coach's answer |
+| 15 | 5 Test | Save the evidence. Approve the write prompt if it appears and say why it exists. | `save AC-07` (or `save AC-ROOM`) | two paths under `runs/` |
+| 16-17 | 5 Test | Recorded frames of the same beat, if you stay on the recorded path. | | |
+| 18-19 | 5 Challenge | BUILDER session. Read the verdict aloud. If it disagrees with the room, stay there a minute. | `/challenge AC-07` | quotes per requirement, then a `Verdict AC-07:` line and the smallest repair |
+| 20 | 6 Repair | If fail: BUILDER. It changes one rule, shows before and after, stops. | `/repair BR-xx` plus the challenger's last two lines | before / after |
+| 20 | 6 Repair | Then COACH, new session, same input, save; then one passing case (AC-13 is quick); then BUILDER challenges again. | `/coach` ... `save AC-07` ... `/challenge AC-07` | repair holds or not |
+| 21-24 | 6 Repair | If pass or unresolved: say so. The BR-02 repair is already applied (lines 104-109), so a live `/repair BR-02` reports nothing to fix. Point at the recorded fail and repair here instead. | | |
+| 25-29 | | Deck only. | | |
 
 Fresh conversation = new session, not `/clear`. Never manufacture a failure; the recorded one is real and on the slides. Do not improve a response before the room judges it.
 
