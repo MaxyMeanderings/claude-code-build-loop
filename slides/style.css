@@ -92,3 +92,8 @@
 .slidev-layout .cover-szd{position:absolute;left:210px;bottom:64px;height:78px;width:auto}
 .slidev-layout .connect-szd{position:absolute;right:72px;top:150px;height:64px;width:auto;opacity:.95}
 .slidev-layout .source{right:230px}
+
+/* presenter focus list */
+.slidev-layout .presenter ul.focus{margin:8px 0 0;padding-left:0;list-style:none;display:grid;gap:4px}
+.slidev-layout .presenter ul.focus li{font-size:.92rem;color:var(--ink);line-height:1.4;padding-left:16px;position:relative}
+.slidev-layout .presenter ul.focus li::before{content:"";position:absolute;left:0;top:.55em;width:8px;height:2px;background:var(--accent)}

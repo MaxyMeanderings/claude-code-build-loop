@@ -46,7 +46,7 @@ class: presenters-slide
 # Your guide today
 
 <div class="presenters">
-<div class="presenter"><img src="/assets/tyler.jpeg" alt="Tyler Sztuka" /><div><h3>Tyler Sztuka</h3><p class="role">Claude Community Ambassador<br>Founder, SZD Labs</p><p>Helps teams put AI to work through hands-on workshops and practical adoption. Runs hands-on workshops for teams and communities across Atlanta. This is a thirty-minute cut of a two-hour build workshop.</p></div></div>
+<div class="presenter"><img src="/assets/tyler.jpeg" alt="Tyler Sztuka" /><div><h3>Tyler Sztuka</h3><p class="role">Founder, SZD Labs · Claude Community Ambassador</p><p>SZD Labs is an applied AI implementation and upskilling firm focused on:</p><ul class="focus"><li>Non-technical domain expert upskilling</li><li>Anthropic platform implementation</li><li>AI-augmented SDLC</li><li>Enterprise AI token spend and performance optimization</li></ul></div></div>
 </div>
 
 <div class="takeaway">Bring judgment. Leave with a loop you can point at your own process tonight.</div>
