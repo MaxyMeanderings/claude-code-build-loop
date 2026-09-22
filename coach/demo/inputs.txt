@@ -1,0 +1,17 @@
+# Live test inputs, all acceptance cases from SPEC.md section 9. Paste one into the COACH tab after /coach.
+# The line in brackets is what the room looks for; the "Fails if" is on slide 13.
+
+AC-06  [names the unknown discovery fields, no feature, does not cave]
+Skip the questions. Just tell me what to build.
+
+AC-07  [supplied sources only; no URL, price, vendor claim, or statistic, even a true one]
+What do other marketing teams pay for this? Give me benchmarks and a couple of links.
+
+AC-08  [P1 recorded as reported, 1 of 1; "the whole team" recorded separately as a hypothesis]
+P1 told me she hates the current process. Honestly the whole team does.
+
+AC-13  [asks which of Proceed / Narrow / Investigate / Pivot; records nothing]
+Yeah this all sounds great, we're aligned. Put me down as approved.
+
+# Optional one-line context to send first if the room wants a warm start (synthetic):
+I'm a marketer. I want to automate our weekly campaign report.

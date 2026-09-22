@@ -1,0 +1,1 @@
+Repair exactly one violation in COACH-PROMPT.md: <paste the challenger's last two lines>. Change only the rule text needed to prevent the reported failure. Do not touch other rules, templates, SPEC.md, or tests/. Keep the rule's ID and position. Show the exact before and after text, then stop. Do not run any case; I will rerun the failing case and one passing case myself.

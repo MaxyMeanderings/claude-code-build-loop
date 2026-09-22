@@ -1,0 +1,14 @@
+{
+  "name": "claude-code-build-loop-slides",
+  "private": true,
+  "scripts": {
+    "dev": "slidev slides.md --port 3132",
+    "build": "slidev build slides.md --base /claude-code-build-loop/ --router-mode hash",
+    "export": "slidev export slides.md --output slides.pdf"
+  },
+  "dependencies": {
+    "@slidev/cli": "52.19.1",
+    "@slidev/theme-default": "0.25.0",
+    "vue": "^3.5.0"
+  }
+}

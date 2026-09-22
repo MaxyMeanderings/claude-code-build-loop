@@ -1,0 +1,7 @@
+node_modules/
+slides/dist/
+slides/.slidev/
+slides/slides.pdf
+.DS_Store
+Thumbs.db
+coach/.claude/settings.local.json
